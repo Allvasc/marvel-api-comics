@@ -64,3 +64,45 @@
     -webkit-box-orient: vertical;
     margin: 0 auto;
 }
+
+.load-more{
+    background-color: #e62429;
+    color: #f4ebeb;
+    opacity: 1;
+    -webkit-transition: none;
+    transition: none;
+    text-align: center;
+    line-height: 16px;
+    width: 200px;
+    font-size: 20px;
+    height: 40px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.load-more:hover{
+    transition: 0.3s;
+    background-color: #a0060b;
+    color: #fff;
+}
+
+.modal-button{
+    background-color: #e62429;
+    color: #f4ebeb;
+    opacity: 1;
+    -webkit-transition: none;
+    transition: none;
+    text-align: center;
+    line-height: 16px;
+    width: 200px;
+    font-size: 20px;
+    height: 40px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.modal-button:hover{
+    transition: 0.3s;
+    background-color: #a0060b;
+    color: #fff;
+}

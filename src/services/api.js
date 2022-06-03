@@ -4,7 +4,7 @@ import md5 from 'md5';
 const publicKey = '9689507afe1e9d33662729e81720b2f4';
 const privateKey = '653fd46916c8aaf8076444b8f0e2aa8fb52e73a0';
 
-const time = new Date().getDate();
+const time = Number(new Date());
 
 const hash = md5(time + privateKey + publicKey);
 

@@ -1,11 +1,16 @@
 import React, { useCallback, useState } from 'react'
 import { useEffect } from 'react';
 import api from '../../services/api';
-import './Comics.css'
+import './Comics.css';
+import GoogleMaps from '../GoogleMaps/GoogleMaps';
 
 const Comics = () => {
 
   const [comics, setComics] = useState([])
+  const [modalcontent, setModalContent] = useState([])
+  const changeContent = () => {
+    setModalContent([comics])
+  }
 
   useEffect(() => {
     api
@@ -16,7 +21,7 @@ const Comics = () => {
 
   const handleMore = useCallback(async () => {
     try {
-      const offset = comics.length
+      const offset = comics.length * 5
       const response = await api.get('comics', {
         params: {
           offset: offset,
@@ -30,6 +35,7 @@ const Comics = () => {
     }
   }, [comics])
 
+  console.log(comics)
 
   return (
     <div>
@@ -42,12 +48,21 @@ const Comics = () => {
               <div className='img__description'>
                 <p>{comic.title}</p>
                 <p className='featured--description'>{comic.description}</p>
-                <button>QUERO ESSE</button>
+                <button className='modal-button' onClick={changeContent}>QUERO ESSE</button>
               </div>
             </div>)
         })}
       </div>
-      <button onClick={handleMore}>Load more</button>
+      <button className='load-more' onClick={() => handleMore(comics)}>Load more</button>
+
+      <div className="modal-container">
+        <div className="modal-header">
+          <button>X</button>
+        </div>
+        <div className='modal-content'>
+          <GoogleMaps />
+        </div>
+      </div>
     </div>
   )
 }
