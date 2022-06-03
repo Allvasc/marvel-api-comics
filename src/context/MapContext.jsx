@@ -23,7 +23,7 @@ export const MapProvider = ({children}) => {
     }
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyAsfd2Ap3EwAMMfbbvBbtO_9NtcVOB-HCE"
+        googleMapsApiKey: process.env.COMIC_APP_API_MAPS_KEY
     })
 //codes
 
