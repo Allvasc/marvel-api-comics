@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 const GoogleMaps = () => {
 
-    const { isLoaded, Lat, Lng} = useContext(MapContext)  
+    const { isLoaded, centro} = useContext(MapContext)  
 
     if (!isLoaded) {
         return <div>Loading</div>;
@@ -14,7 +14,7 @@ const GoogleMaps = () => {
     }
 
     function Map() {
-        return <GoogleMap zoom={10} center={{ lat: Lat, lng: Lng }} mapContainerClassName="map-container"></GoogleMap>
+        return <GoogleMap zoom={10} center={centro} mapContainerClassName="map-container"></GoogleMap>
 
     }
 

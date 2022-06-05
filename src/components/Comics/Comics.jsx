@@ -10,7 +10,7 @@ const Comics = () => {
   return (
     <div>
       <h1>Comics</h1>
-      <div className='container-items'>
+      <div className='container-items text-center'>
         {comics.map(comic => {
           return (
             <div className='item img__wrap' key={comic.id}>
